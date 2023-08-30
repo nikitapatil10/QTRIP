@@ -2,6 +2,7 @@ package qtriptest.tests;
 
 import qtriptest.DP;
 import qtriptest.DriverSingleton;
+import qtriptest.ReportSingleton;
 import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
@@ -20,6 +21,7 @@ public class testCase_01 {
     public void TestCase01(String TC1_Username,String TC1_Password) throws InterruptedException, IOException
     {
         Boolean status;  
+        ReportSingleton.test = ReportSingleton.reports.startTest("verify the user is register successfully");
         RemoteWebDriver driver= DriverSingleton.getDriver();
         RegisterPage register = new RegisterPage();
         //Thread.sleep(2000);
@@ -35,6 +37,7 @@ public class testCase_01 {
         login.navigateToLoginPage();
         login.performLogin(lastGeneratedUsername, TC1_Password);
         //Thread.sleep(2000);
+        ReportSingleton.test.log(LogStatus.PASS,ReportSingleton.test.addScreenCapture(ReportSingleton.capture(driver)) ,"Successfully logged in with the registered  user");
         HomePage home = new HomePage();
         status = home.isUserLoggedIn();
         //Thread.sleep(2000);

@@ -2,7 +2,7 @@ package qtriptest.tests;
 
 import qtriptest.DP;
 import qtriptest.DriverSingleton;
-
+import qtriptest.ReportSingleton;
 import qtriptest.pages.RegisterPage;
 import qtriptest.pages.AdventureDetailsPage;
 import qtriptest.pages.AdventurePage;
@@ -24,6 +24,7 @@ public class testCase_03 {
    public void TestCase03(String userName,String password,String city,String adventureName, String guestName,String date,String persons) throws InterruptedException, IOException
    {
         Boolean status;
+        ReportSingleton.test = ReportSingleton.reports.startTest("verify that adventure bookiing and cancellation works fine");
         RemoteWebDriver driver= DriverSingleton.getDriver();
         RegisterPage register = new RegisterPage();
         //Thread.sleep(2000);
@@ -72,6 +73,7 @@ public class testCase_03 {
          count = history.getReservations();
          Thread.sleep(2000);
          assertEquals(count,0,"Actual history count and expected history count not match");
+         ReportSingleton.test.log(LogStatus.PASS,ReportSingleton.test.addScreenCapture(ReportSingleton.capture(driver)) ,"Successfully verify that adventure bookiing and cancellation works fine");
          home.loggedOutUSer();
         }    
         

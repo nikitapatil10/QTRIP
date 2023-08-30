@@ -2,7 +2,7 @@ package qtriptest.tests;
 
 import qtriptest.DP;
 import qtriptest.DriverSingleton;
-
+import qtriptest.ReportSingleton;
 import qtriptest.pages.AdventureDetailsPage;
 import qtriptest.pages.AdventurePage;
 import qtriptest.pages.HistoryPage;
@@ -24,7 +24,7 @@ public class testCase_04 {
     @Test(description = "verify that adventure bookiing and cancellation works fine",dataProvider = "data-provider",dataProviderClass = DP.class,priority = 4,groups = {"Reliability Flow"})
     public void TestCase04(String emailId,String password,String dataSet1,String dataSet2,String dataSet3) throws InterruptedException, IOException
     {
-       
+        ReportSingleton.test = ReportSingleton.reports.startTest("verify that adventure bookiing and cancellation works fine");
         List<String> expectedResult1 = Arrays.asList(dataSet1.split(";"));
         List<String> expectedResult2 = Arrays.asList(dataSet2.split(";"));
         List<String> expectedResult3 = Arrays.asList(dataSet3.split(";"));
@@ -108,7 +108,7 @@ public class testCase_04 {
         int count = history.getReservations();
         Thread.sleep(2000);
         assertEquals(count,3,"Actual history count and expected history count not match");
-       
+        ReportSingleton.test.log(LogStatus.PASS,ReportSingleton.test.addScreenCapture(ReportSingleton.capture(driver)) ,"Successfully verify that adventure bookiing and cancellation works fine");
 
         }
     }

@@ -2,6 +2,7 @@ package qtriptest.tests;
 
 import qtriptest.DP;
 import qtriptest.DriverSingleton;
+import qtriptest.ReportSingleton;
 import qtriptest.pages.AdventurePage;
 import qtriptest.pages.HomePage;
 import org.openqa.selenium.By;
@@ -21,6 +22,7 @@ public class testCase_02 {
     public void TestCase02(String cityName, String categoryFilter, String durationFilter, String expectedFilterResult, String expectedUnfilterResult ) throws InterruptedException, IOException
     {
         int status;
+        ReportSingleton.test = ReportSingleton.reports.startTest("verify that the search and filters are working fine");
         RemoteWebDriver driver= DriverSingleton.getDriver();
         HomePage home = new HomePage();
         home.navigateToHomePage();
@@ -52,7 +54,8 @@ public class testCase_02 {
               //Thread.sleep(2000);
               status = adventure.getResultCount();
               assertEquals(String.valueOf(status),expectedUnfilterResult,"The actual and expected count of unfiltered values is different");
-       }
+              ReportSingleton.test.log(LogStatus.PASS,ReportSingleton.test.addScreenCapture(ReportSingleton.capture(driver)) ,"Successfully verify that the search and filters are working fine");
+            }
     }
    
 }
