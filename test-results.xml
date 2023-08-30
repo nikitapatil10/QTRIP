@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-08-30T15:58:04 IST" name="Tests for QTrip Regression" finished-at="2023-08-30T15:58:25 IST" duration-ms="21864">
+    <groups>
+      <group name="Login Flow">
+        <method signature="testCase_01.TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@532a02d9]" name="TestCase01" class="qtriptest.tests.testCase_01"/>
+      </group> <!-- Login Flow -->
+    </groups>
+    <test started-at="2023-08-30T15:58:04 IST" name="LoginFlow" finished-at="2023-08-30T15:58:25 IST" duration-ms="21864">
+      <class name="qtriptest.DriverSingleton">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:qtriptest.DriverSingleton@29cfd92b]" started-at="2023-08-30T15:58:03 IST" name="launchBrowser" finished-at="2023-08-30T15:58:04 IST" duration-ms="66" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:qtriptest.DriverSingleton@29cfd92b]" started-at="2023-08-30T15:58:25 IST" name="quitDriver" finished-at="2023-08-30T15:58:25 IST" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- qtriptest.DriverSingleton -->
+      <class name="qtriptest.tests.testCase_01">
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@532a02d9]" started-at="2023-08-30T15:58:06 IST" name="TestCase01" description="verify the user is register successfully" data-provider="data-provider" finished-at="2023-08-30T15:58:13 IST" duration-ms="6941" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testuser@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[abc@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase01 -->
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@532a02d9]" started-at="2023-08-30T15:58:13 IST" name="TestCase01" description="verify the user is register successfully" data-provider="data-provider" finished-at="2023-08-30T15:58:19 IST" duration-ms="6061" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TESTUSER@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase01 -->
+        <test-method signature="TestCase01(java.lang.String,java.lang.String)[pri:1, instance:qtriptest.tests.testCase_01@532a02d9]" started-at="2023-08-30T15:58:19 IST" name="TestCase01" description="verify the user is register successfully" data-provider="data-provider" finished-at="2023-08-30T15:58:25 IST" duration-ms="6079" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[123_USER_low@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[QWERTY!!!!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase01 -->
+      </class> <!-- qtriptest.tests.testCase_01 -->
+    </test> <!-- LoginFlow -->
+  </suite> <!-- Tests for QTrip Regression -->
+</testng-results>
