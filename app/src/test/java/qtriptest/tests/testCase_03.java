@@ -25,7 +25,7 @@ public class testCase_03 {
    {
         Boolean status;
         ReportSingleton.test = ReportSingleton.reports.startTest("verify that adventure bookiing and cancellation works fine");
-        RemoteWebDriver driver= DriverSingleton.getDriver();
+        WebDriver driver= DriverSingleton.getDriver();
         RegisterPage register = new RegisterPage();
         //Thread.sleep(2000);
         register.navigateToRegisterPage();
@@ -54,7 +54,7 @@ public class testCase_03 {
          home.selectCity(city);
          Thread.sleep(2000);
          AdventurePage adventure = new AdventurePage();
-         adventure.selectAdventure(adventureName);
+         adventure.selectAdventure(adventureName,driver);
          Thread.sleep(2000);
          AdventureDetailsPage adventureDetails = new AdventureDetailsPage();
          //adventureDetails.navigateToAdventurePage();

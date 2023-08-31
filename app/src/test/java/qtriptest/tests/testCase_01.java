@@ -6,6 +6,8 @@ import qtriptest.ReportSingleton;
 import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
@@ -22,7 +24,7 @@ public class testCase_01 {
     {
         Boolean status;  
         ReportSingleton.test = ReportSingleton.reports.startTest("verify the user is register successfully");
-        RemoteWebDriver driver= DriverSingleton.getDriver();
+        WebDriver driver= DriverSingleton.getDriver();
         RegisterPage register = new RegisterPage();
         //Thread.sleep(2000);
         register.navigateToRegisterPage();

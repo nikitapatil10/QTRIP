@@ -15,6 +15,8 @@ import java.util.Arrays;
 import java.util.List;
 import javax.lang.model.util.ElementScanner6;
 import com.relevantcodes.extentreports.LogStatus;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
@@ -30,7 +32,7 @@ public class testCase_04 {
         List<String> expectedResult3 = Arrays.asList(dataSet3.split(";"));
 
         Boolean status;
-        RemoteWebDriver driver= DriverSingleton.getDriver();
+        WebDriver driver= DriverSingleton.getDriver();
         RegisterPage register = new RegisterPage();
         register.navigateToRegisterPage();
         //Thread.sleep(2000);
@@ -59,7 +61,7 @@ public class testCase_04 {
             home.selectCity(expectedResult1.get(0));
             //Thread.sleep(1000);
             
-            adventure.selectAdventure(expectedResult1.get(1));
+            adventure.selectAdventure(expectedResult1.get(1),driver);
             //Thread.sleep(2000);
            
             adventureDetails.bookAdventureDetails(expectedResult1.get(2), expectedResult1.get(3), expectedResult1.get(4));
@@ -81,7 +83,7 @@ public class testCase_04 {
         {
             home.selectCity(expectedResult2.get(0));
             //Thread.sleep(1000);
-            adventure.selectAdventure(expectedResult2.get(1));
+            adventure.selectAdventure(expectedResult2.get(1),driver);
             //Thread.sleep(2000);
             adventureDetails.bookAdventureDetails(expectedResult2.get(2), expectedResult2.get(3), expectedResult2.get(4));
             // Thread.sleep(2000);
@@ -99,7 +101,7 @@ public class testCase_04 {
         else{
             home.selectCity(expectedResult3.get(0));
         //Thread.sleep(1000);
-        adventure.selectAdventure(expectedResult3.get(1));
+        adventure.selectAdventure(expectedResult3.get(1),driver);
         //Thread.sleep(2000);
         adventureDetails.bookAdventureDetails(expectedResult3.get(2), expectedResult3.get(3), expectedResult3.get(4));
         //Thread.sleep(2000);

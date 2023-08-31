@@ -3,6 +3,8 @@ package qtriptest.pages;
 import java.net.MalformedURLException;
 import java.util.List;
 import javax.lang.model.util.ElementScanner6;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -83,14 +85,19 @@ public class AdventurePage {
         int actualCount = resultCount.size();
         return actualCount;     
     }
-
-    public void selectAdventure(String adventure) throws InterruptedException
+   
+    
+    public void selectAdventure(String adventure,WebDriver driver) throws InterruptedException
     {
         SeleniumWrapper.sendKeys(adventureSearchTextBox, adventure);
         Thread.sleep(2000);
+         JavascriptExecutor js = (JavascriptExecutor) driver;
         //List<WebElement> adventurelist = driver.findElements(By.xpath("//div[@class='activity-card-text text-md-center w-100 mt-3']/div[1]/h5[1]"));
 		for(WebElement l : adventureList)
 		{
+
+            js.executeScript("arguments[0].scrollIntoView();", l);  
+            Thread.sleep(2000);
 			if(l.getText().equals(adventure))
 			{
 				SeleniumWrapper.click(l, driver);

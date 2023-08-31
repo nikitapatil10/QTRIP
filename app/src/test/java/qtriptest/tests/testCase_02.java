@@ -23,7 +23,7 @@ public class testCase_02 {
     {
         int status;
         ReportSingleton.test = ReportSingleton.reports.startTest("verify that the search and filters are working fine");
-        RemoteWebDriver driver= DriverSingleton.getDriver();
+        WebDriver driver= DriverSingleton.getDriver();
         HomePage home = new HomePage();
         home.navigateToHomePage();
         Thread.sleep(2000);
