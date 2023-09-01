@@ -86,7 +86,6 @@ public class AdventurePage {
         return actualCount;     
     }
    
-    
     public void selectAdventure(String adventure,WebDriver driver) throws InterruptedException
     {
         SeleniumWrapper.sendKeys(adventureSearchTextBox, adventure);

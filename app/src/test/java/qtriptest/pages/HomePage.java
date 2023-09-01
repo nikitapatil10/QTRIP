@@ -15,7 +15,6 @@ public class HomePage {
    
     WebDriver driver;
     String url = "https://qtripdynamic-qa-frontend.vercel.app/";
-  
 
     @FindBy(xpath = "//a[text()='Register']")
     WebElement registerButton;

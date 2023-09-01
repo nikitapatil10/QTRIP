@@ -13,7 +13,6 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class AdventureDetailsPage {
     String url = "https://qtripdynamic-qa-frontend.vercel.app/pages/adventures/detail/?adventure=2757195090";
     WebDriver driver;

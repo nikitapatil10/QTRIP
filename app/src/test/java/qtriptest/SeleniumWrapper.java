@@ -17,8 +17,7 @@ public class SeleniumWrapper {
             return true;
         }
         else
-            return false;
-       
+            return false;  
     }
 
     public static boolean sendKeys(WebElement textBoxElement,String stringToSend)

@@ -4,7 +4,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
-
 import javax.sql.RowSetReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

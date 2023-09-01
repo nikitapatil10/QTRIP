@@ -111,7 +111,6 @@ public class testCase_04 {
         Thread.sleep(2000);
         assertEquals(count,3,"Actual history count and expected history count not match");
         ReportSingleton.test.log(LogStatus.PASS,ReportSingleton.test.addScreenCapture(ReportSingleton.capture(driver)) ,"Successfully verify that adventure bookiing and cancellation works fine");
-
         }
     }
 

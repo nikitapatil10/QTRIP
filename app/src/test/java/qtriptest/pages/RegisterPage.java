@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import qtriptest.DriverSingleton;
 import qtriptest.SeleniumWrapper;
 
+
 public class RegisterPage {
 
     WebDriver driver;
